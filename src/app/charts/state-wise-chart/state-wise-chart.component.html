@@ -1,0 +1,27 @@
+<h2>State-wise Company Data</h2>
+<mat-card>
+  <mat-card-content>
+    <div id="chart" class="row">
+      <ul id="numbers">
+        <li><span>100%</span></li>
+        <li><span></span></li>
+        <li><span>80%</span></li>
+        <li><span></span></li>
+        <li><span>60%</span></li>
+        <li><span></span></li>
+        <li><span>40%</span></li>
+        <li><span></span></li>
+        <li><span>20%</span></li>
+        <li><span></span></li>
+        <li><span>0%</span></li>
+      </ul>
+
+      <ul id="bars" #stateChartBar>
+        <li *ngFor="let barItem of barData">
+          <div [attr.compCount]="barItem.companies" [matTooltipClass]="{ 'tool-tip': true }" class="bar" matTooltip="{{barItem.companies}} Companies" matTooltipPosition="above" (click)="showCityData(barItem)">
+          </div><span>{{ barItem.stateName }}</span>
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

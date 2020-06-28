@@ -1,0 +1,38 @@
+<!-- Top bar with logo and sidebar toggle button -->
+<mat-toolbar color="primary" class="dashboard-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded">
+    <mat-icon>menu</mat-icon>
+  </button>
+	<h1 class="dashboard-app-name">Chart Diagram</h1>
+</mat-toolbar>
+
+<!-- Sidebar and Main desktop content container -->
+<mat-sidenav-container class="dashboard-container" autosize>
+	<mat-sidenav #sidenav class="dashboard-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-list>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Menu</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="">Item 1</a>
+				<a mat-list-item href="">Item 2</a>
+				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+					<span class="full-width" *ngIf="isExpanded || isShowing">Sub Menu</span>
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+				</mat-list-item>
+				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+					<mat-list-item>Item 1</mat-list-item>
+					<mat-list-item>Item 2</mat-list-item>
+				</div>
+			</div>
+		</mat-list>
+	</mat-sidenav>
+
+  <!-- main desktop container -->
+	<div class="dashboard-sidenav-content">
+		<router-outlet></router-outlet>
+	</div>
+
+</mat-sidenav-container>

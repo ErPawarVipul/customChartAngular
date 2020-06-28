@@ -1,0 +1,15 @@
+<h2>Companies in Mumbai</h2>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let compItem of companyList">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ compItem.name }}
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        {{ compItem.city + " / " + compItem.state }}
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <p>{{ compItem.address }}</p>
+    <p>{{ compItem.contact }}</p>
+  </mat-expansion-panel>
+</mat-accordion>

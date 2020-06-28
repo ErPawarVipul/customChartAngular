@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.basic-container {
+  padding: 5px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+#chart {
+  width: auto;
+  height: 300px;
+  margin: 30px auto 0;
+  display: block;
+}
+#chart #numbers {
+  width: 12%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+#chart #numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  height: 30px;
+  position: relative;
+  bottom: 20px;
+}
+#chart #numbers li:last-child {
+  height: 30px;
+}
+#chart #numbers li span {
+  color: #000;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+#chart #bars {
+  display: inline-block;
+  /* background: rgba(0, 0, 0, 0.2); */
+  width: 85%;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  /* box-shadow: 0 0 0 1px #444; */
+}
+#chart #bars li {
+  display: table-cell;
+  width: 100px;
+  height: 300px;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+@keyframes slideUpFromBottom {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: attr(compCount)'px';
+  }
+}
+#chart #bars li .bar {
+  display: block;
+  width: 60px;
+  margin-left: 25px;
+  background: rgba(157,209,245,0.5);
+  border: 1px solid #9dd1f5;
+  border-bottom: 0px;
+  position: absolute;
+  bottom: 0;
+  transition: background 0.3s ;
+  animation: 0.7s ease 0s 1 slideUpFromBottom;
+}
+#chart #bars li .bar:hover {
+  /* background: #5AE; */
+  background: #49E;
+  cursor: pointer;
+}
+
+#chart #bars li span {
+  color: #000;
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  text-align: center;
+}
+
+.tool-tip {
+  color: #000 !important;
+  background:transparent;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  font-size: 12px;
+}
