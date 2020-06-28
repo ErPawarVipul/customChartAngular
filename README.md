@@ -1,6 +1,9 @@
 # CompanyChart
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+Run `npm install` to Intall node modules.
+Run `ng add @angular/material` to add Agnular Material
+Run `ng install --save bootstrap@3` and add bootstrap path in angular.json file's style.
 
 ## Development server
 
