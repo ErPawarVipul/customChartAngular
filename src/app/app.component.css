@@ -1,4 +1,4 @@
-/* desktop and menu css */
+/* desktop and menu css style */
 .dashboard-container {
   height: 500px;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -16,6 +16,7 @@
   width: 100%;
 }
 .menu-button {
+
   transition: 300ms ease-in-out;
   transform: rotate(0deg);
 }
